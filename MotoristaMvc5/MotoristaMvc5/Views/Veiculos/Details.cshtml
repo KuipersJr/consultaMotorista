@@ -1,0 +1,82 @@
+﻿@model MotoristaMvc5.Models.Cadastros.Veiculo.Veiculo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Veiculo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_TIPO_PROPRIETARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_TIPO_PROPRIETARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_NOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_NOME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_PLACA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_PLACA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_RENAVAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_RENAVAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_RENA_UF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_RENA_UF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_PROP_CPF_CNPJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_PROP_CPF_CNPJ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_PROP_NOME_RAZAO_SOCIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_PROP_NOME_RAZAO_SOCIAL)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VEI_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

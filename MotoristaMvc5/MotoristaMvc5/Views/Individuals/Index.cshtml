@@ -1,0 +1,171 @@
+﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Motoristas.Individual>
+
+@{
+    ViewBag.Title = "Individual";
+}
+
+<h2>Individual</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_NACIONALIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_NOME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_SEXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_DATA_NASCIMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_RG_RGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_RG_ORG_EMISSAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_RG_DATA_EMISSAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_CNH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_CNH_UF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_P_CNH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_CNH_VALIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_CNH_SEGURANCA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_CNH_CAT_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_TELEFONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_CELULAR_I)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_CELULAR_II)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_EX_DOCUMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_EX_DOC_VALIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_EX_CNH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_EX_CNH_VALIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_EX_PAIS_ORG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_INDI_EX_CIDADE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_NACIONALIDADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_NOME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_SEXO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_DATA_NASCIMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_CPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_RG_RGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_RG_ORG_EMISSAO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_RG_DATA_EMISSAO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_CNH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_CNH_UF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_P_CNH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_CNH_VALIDADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_CNH_SEGURANCA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_CNH_CAT_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_TELEFONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_CELULAR_I)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_CELULAR_II)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_EX_DOCUMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_EX_DOC_VALIDADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_EX_CNH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_EX_CNH_VALIDADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_EX_PAIS_ORG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_INDI_EX_CIDADE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MOT_INDI_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MOT_INDI_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MOT_INDI_ID })
+        </td>
+    </tr>
+}
+
+</table>

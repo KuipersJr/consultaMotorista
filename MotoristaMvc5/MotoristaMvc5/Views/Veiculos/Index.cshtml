@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Veiculo.Veiculo>
+
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Veículos</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VEI_TIPO_PROPRIETARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEI_CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEI_NOME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEI_PLACA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEI_RENAVAM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEI_RENA_UF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEI_PROP_CPF_CNPJ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEI_PROP_NOME_RAZAO_SOCIAL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEI_TIPO_PROPRIETARIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEI_CPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEI_NOME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEI_PLACA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEI_RENAVAM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEI_RENA_UF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEI_PROP_CPF_CNPJ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEI_PROP_NOME_RAZAO_SOCIAL)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.VEI_ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.VEI_ID }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.VEI_ID })
+        </td>
+    </tr>
+}
+
+</table>

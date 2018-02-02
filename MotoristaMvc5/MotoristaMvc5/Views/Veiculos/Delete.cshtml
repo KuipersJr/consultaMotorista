@@ -1,0 +1,88 @@
+﻿@model MotoristaMvc5.Models.Cadastros.Veiculo.Veiculo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Veiculo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_TIPO_PROPRIETARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_TIPO_PROPRIETARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_NOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_NOME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_PLACA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_PLACA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_RENAVAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_RENAVAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_RENA_UF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_RENA_UF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_PROP_CPF_CNPJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_PROP_CPF_CNPJ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEI_PROP_NOME_RAZAO_SOCIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEI_PROP_NOME_RAZAO_SOCIAL)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

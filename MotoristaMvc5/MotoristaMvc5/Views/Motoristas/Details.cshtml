@@ -1,0 +1,161 @@
+﻿@model MotoristaMvc5.Models.Cadastros.Motoristas.MOTORISTA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Motorista</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_NACIONALIDADE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_NACIONALIDADE)
+        </dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.MOT_NOME)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.MOT_NOME)
+		</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_SEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_SEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_DATA_NASCIMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_DATA_NASCIMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_RG_RGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_RG_RGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_RG_ORG_EMISSAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_RG_ORG_EMISSAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_RG_DATA_EMISSAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_RG_DATA_EMISSAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_CNH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_CNH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_CNH_UF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_CNH_UF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_P_CNH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_P_CNH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_CNH_VALIDADE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_CNH_VALIDADE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_CNH_SEGURANCA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_CNH_SEGURANCA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_CNH_CAT_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_CNH_CAT_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_TELEFONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_TELEFONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_CELULAR_I)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_CELULAR_I)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_CELULAR_II)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_CELULAR_II)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_EMAIL)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MOT_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

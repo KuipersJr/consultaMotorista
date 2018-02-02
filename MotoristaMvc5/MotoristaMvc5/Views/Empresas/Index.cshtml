@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Empresa.Empresa>
+
+@{
+    ViewBag.Title = "Empresas";
+}
+
+<h2>Empresas</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_CNPJ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_IE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_NOME_RAZAO_SOCIAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_CEP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_ENDERECO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_COMPLEMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_CIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_BAIRRO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_UF)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_CNPJ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_IE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_NOME_RAZAO_SOCIAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_CEP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_ENDERECO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_COMPLEMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_CIDADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_BAIRRO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_UF)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.EMP_ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.EMP_ID }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.EMP_ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,90 @@
+﻿@model MotoristaMvc5.Models.Cadastros.Empresa.Empresa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_CNPJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_CNPJ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_IE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_IE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_NOME_RAZAO_SOCIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_NOME_RAZAO_SOCIAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_CEP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_CEP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_ENDERECO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_ENDERECO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_COMPLEMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_COMPLEMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_CIDADE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_CIDADE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_BAIRRO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_BAIRRO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_UF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_UF)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EMP_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

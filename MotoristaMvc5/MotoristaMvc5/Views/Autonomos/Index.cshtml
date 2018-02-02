@@ -1,0 +1,147 @@
+﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Motoristas.Autonomo>
+
+@{
+    ViewBag.Title = "Autonomo";
+}
+
+<h2>Autonomo</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_NACIONALIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_NOME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_SEXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_DATA_NASCIMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_RG_RGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_RG_ORG_EMISSAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_RG_DATA_EMISSAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_CNH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_CNH_UF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_P_CNH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_CNH_VALIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_CNH_SEGURANCA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_CNH_CAT_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_TELEFONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_CELULAR_I)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_CELULAR_II)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_FLG_SERASA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_AUT_FLG_CRIMINAL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_NACIONALIDADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_NOME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_SEXO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_DATA_NASCIMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_CPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_RG_RGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_RG_ORG_EMISSAO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_RG_DATA_EMISSAO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_CNH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_CNH_UF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_P_CNH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_CNH_VALIDADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_CNH_SEGURANCA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_CNH_CAT_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_TELEFONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_CELULAR_I)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_CELULAR_II)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_FLG_SERASA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_AUT_FLG_CRIMINAL)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.MOT_AUT_ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.MOT_AUT_ID }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.MOT_AUT_ID })
+        </td>
+    </tr>
+}
+
+</table>

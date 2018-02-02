@@ -1,0 +1,136 @@
+﻿@model MotoristaMvc5.Models.Agregado
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Agregado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_TIPO_PROPRIETARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_TIPO_PROPRIETARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_NOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_NOME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_PLACA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_PLACA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_RENAVAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_RENAVAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_RENA_UF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_RENA_UF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_PROP_CPF_CNPJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_PROP_CPF_CNPJ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_PROP_NOME_RAZAO_SOCIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_PROP_NOME_RAZAO_SOCIAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_PROP_NOME_MAE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_PROP_NOME_MAE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_PROP_NOME_PAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_PROP_NOME_PAI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_PROP_SEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_PROP_SEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_PROP_DATA_NASCIMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_PROP_DATA_NASCIMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_PROP_RG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_PROP_RG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAV_PROP_UF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAV_PROP_UF)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

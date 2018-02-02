@@ -1,0 +1,111 @@
+﻿@model IEnumerable<MotoristaMvc5.Models.Agregado>
+
+@{
+    ViewBag.Title = "Agregados";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_TIPO_PROPRIETARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_NOME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_PLACA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_RENAVAM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_RENA_UF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_PROP_CPF_CNPJ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_PROP_NOME_RAZAO_SOCIAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_PROP_NOME_MAE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_PROP_NOME_PAI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_PROP_SEXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_PROP_DATA_NASCIMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_PROP_RG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAV_PROP_UF)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_TIPO_PROPRIETARIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_CPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_NOME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_PLACA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_RENAVAM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_RENA_UF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_PROP_CPF_CNPJ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_PROP_NOME_RAZAO_SOCIAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_PROP_NOME_MAE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_PROP_NOME_PAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_PROP_SEXO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_PROP_DATA_NASCIMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_PROP_RG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAV_PROP_UF)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.MAV_ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.MAV_ID }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.MAV_ID })
+        </td>
+    </tr>
+}
+
+</table>

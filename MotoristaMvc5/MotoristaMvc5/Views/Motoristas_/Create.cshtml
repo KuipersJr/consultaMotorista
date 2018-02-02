@@ -1,0 +1,207 @@
+﻿@model MotoristaMvc5.Models.Cadastros.Motoristas.Motorista_
+
+@{
+    ViewBag.Title = "Cadastro de motorista rh";
+}
+
+<h2>Cadastro</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Motorista RH</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_NACIONALIDADE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.CheckBoxFor(model => model.MOT_NACIONALIDADE, new { htmlAttributes = new { @class = "form-control" } })*@ 				
+				@Html.RadioButtonFor(model => model.MOT_NACIONALIDADE, "S", false)@Html.Label("Sim")
+				@Html.RadioButtonFor(model => model.MOT_NACIONALIDADE, "N", false)@Html.Label("Não")
+                @Html.ValidationMessageFor(model => model.MOT_NACIONALIDADE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.MOT_NOME, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.MOT_NOME, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.MOT_NOME, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.MOT_DATA_NASCIMENTO, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.MOT_DATA_NASCIMENTO, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.MOT_DATA_NASCIMENTO, "", new { @class = "text-danger" })
+				@Html.DisplayFor(model => model.MOT_DATA_NASCIMENTO)
+			</div>
+		</div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_SEXO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.MOT_SEXO, "F",false)@Html.Label("Feminino")   @*new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.RadioButtonFor(model => model.MOT_SEXO, "M", false)@Html.Label("Masculino")				
+				@*@Html.ValidationMessageFor(model => model.MOT_SEXO, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_CPF, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_CPF, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_CPF, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_RG_RGE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_RG_RGE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_RG_RGE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_RG_ORG_EMISSAO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_RG_ORG_EMISSAO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_RG_ORG_EMISSAO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_RG_DATA_EMISSAO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_RG_DATA_EMISSAO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_RG_DATA_EMISSAO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_CNH, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_CNH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_CNH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.MOT_CNH, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.MOT_CNH, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.MOT_CNH, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_CNH_UF, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_CNH_UF, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_CNH_UF, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_P_CNH, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_P_CNH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_P_CNH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_CNH_VALIDADE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_CNH_VALIDADE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_CNH_VALIDADE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_CNH_SEGURANCA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_CNH_SEGURANCA, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_CNH_SEGURANCA, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_TELEFONE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_TELEFONE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_TELEFONE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_CELULAR_I, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_CELULAR_I, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_CELULAR_I, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_CELULAR_II, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_CELULAR_II, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_CELULAR_II, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOT_EMAIL, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MOT_EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MOT_EMAIL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.MOT_FLG_SERASA, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@*@Html.EditorFor(model => model.MOT_FLG_SERASA, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.RadioButtonFor(model => model.MOT_FLG_SERASA, "S", false)@Html.Label("Sim")  
+				@Html.RadioButtonFor(model => model.MOT_FLG_SERASA, "N", false)@Html.Label("Não")
+				@Html.ValidationMessageFor(model => model.MOT_FLG_SERASA, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.MOT_FLG_CRIMINAL, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@*@Html.EditorFor(model => model.MOT_FLG_CRIMINAL, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.RadioButtonFor(model => model.MOT_FLG_CRIMINAL, "S", false)@Html.Label("Sim")
+				@Html.RadioButtonFor(model => model.MOT_FLG_CRIMINAL, "N", false)@Html.Label("Não")
+				@Html.ValidationMessageFor(model => model.MOT_FLG_CRIMINAL, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Gravar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar para listagem", "Index")
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#MOT_DATA_NASCIMENTO").datepicker();
+	})
+</script>	
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

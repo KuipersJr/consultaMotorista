@@ -1,0 +1,140 @@
+﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Motoristas.Motorista>
+
+@{
+    ViewBag.Title = "Motoristas cadastrados";
+}
+
+<h2>Motoristas cadastrados</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_NACIONALIDADE)
+        </th>
+		<th>
+			@Html.DisplayNameFor(model => model.MOT_NOME)
+		</th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_SEXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_DATA_NASCIMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_RG_RGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_RG_ORG_EMISSAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_RG_DATA_EMISSAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_CNH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_CNH_UF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_P_CNH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_CNH_VALIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_CNH_SEGURANCA)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_TELEFONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_CELULAR_I)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_CELULAR_II)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOT_EMAIL)
+        </th>
+		<td>
+			@Html.DisplayNameFor(model => model.MOT_FLG_SERASA)
+		</td>
+		<td>
+			@Html.DisplayNameFor(model => model.MOT_FLG_CRIMINAL)
+		</td>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_NACIONALIDADE)
+        </td>
+		<td>
+			@Html.DisplayFor(modelItem => item.MOT_NOME)
+		</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_SEXO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_DATA_NASCIMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_CPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_RG_RGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_RG_ORG_EMISSAO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_RG_DATA_EMISSAO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_CNH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_CNH_UF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_P_CNH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_CNH_VALIDADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_CNH_SEGURANCA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_TELEFONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_CELULAR_I)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_CELULAR_II)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOT_EMAIL)
+        </td>
+		<td>
+			@Html.DisplayFor(modelItem => item.MOT_FLG_SERASA)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.MOT_FLG_CRIMINAL)
+		</td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.MOT_ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.MOT_ID }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.MOT_ID })
+        </td>
+    </tr>
+}
+
+</table>
