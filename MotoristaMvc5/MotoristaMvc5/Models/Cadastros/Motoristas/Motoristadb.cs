@@ -77,5 +77,15 @@ namespace MotoristaMvc5.Models.Cadastros.Motoristas
                 .Property(e => e.MOT_COD_INT)
                 .IsUnicode(false);
         }
+
+        public System.Data.Entity.DbSet<MotoristaMvc5.Models.Cadastros.Motoristas.MOT_AGREGADO_VEICULO> MOT_AGREGADO_VEICULO { get; set; }
+
+        public System.Data.Entity.DbSet<MotoristaMvc5.Models.Cadastros.Motoristas.MOT_AUTONOMO> MOT_AUTONOMO { get; set; }
+
+        public System.Data.Entity.DbSet<MotoristaMvc5.Models.Cadastros.Motoristas.MOT_INDIVIDUAL> MOT_INDIVIDUAL { get; set; }
+
+        public System.Data.Entity.DbSet<MotoristaMvc5.Models.Cadastros.Empresa.MOT_EMPRESA> MOT_EMPRESA { get; set; }
+
+        public System.Data.Entity.DbSet<MotoristaMvc5.Models.Cadastros.Veiculo.MOT_VEICULO> MOT_VEICULO { get; set; }
     }
 }

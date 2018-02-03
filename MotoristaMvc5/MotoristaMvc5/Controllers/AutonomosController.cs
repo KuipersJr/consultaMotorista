@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -13,27 +12,27 @@ namespace MotoristaMvc5.Controllers
 {
     public class AutonomosController : Controller
     {
-        private Autonomodb db = new Autonomodb();
+        private Motoristadb db = new Motoristadb();
 
         // GET: Autonomos
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            return View(await db.Autonomo.ToListAsync());
+            return View(db.MOT_AUTONOMO.ToList());
         }
 
         // GET: Autonomos/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Autonomo autonomo = await db.Autonomo.FindAsync(id);
-            if (autonomo == null)
+            MOT_AUTONOMO mOT_AUTONOMO = db.MOT_AUTONOMO.Find(id);
+            if (mOT_AUTONOMO == null)
             {
                 return HttpNotFound();
             }
-            return View(autonomo);
+            return View(mOT_AUTONOMO);
         }
 
         // GET: Autonomos/Create
@@ -47,31 +46,31 @@ namespace MotoristaMvc5.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MOT_AUT_ID,MOT_AUT_NACIONALIDADE,MOT_AUT_NOME,MOT_AUT_SEXO,MOT_AUT_DATA_NASCIMENTO,MOT_AUT_CPF,MOT_AUT_RG_RGE,MOT_AUT_RG_ORG_EMISSAO,MOT_AUT_RG_DATA_EMISSAO,MOT_AUT_CNH,MOT_AUT_CNH_UF,MOT_AUT_P_CNH,MOT_AUT_CNH_VALIDADE,MOT_AUT_CNH_SEGURANCA,MOT_AUT_CNH_CAT_ID,MOT_AUT_TELEFONE,MOT_AUT_CELULAR_I,MOT_AUT_CELULAR_II,MOT_AUT_EMAIL,MOT_AUT_FLG_SERASA,MOT_AUT_FLG_CRIMINAL")] Autonomo autonomo)
+        public ActionResult Create([Bind(Include = "MOT_AUT_ID,MOT_AUT_NACIONALIDADE,MOT_AUT_NOME,MOT_AUT_SEXO,MOT_AUT_DATA_NASCIMENTO,MOT_AUT_CPF,MOT_AUT_RG_RGE,MOT_AUT_RG_ORG_EMISSAO,MOT_AUT_RG_DATA_EMISSAO,MOT_AUT_CNH,MOT_AUT_CNH_UF,MOT_AUT_P_CNH,MOT_AUT_CNH_VALIDADE,MOT_AUT_CNH_SEGURANCA,MOT_AUT_CNH_CAT_ID,MOT_AUT_TELEFONE,MOT_AUT_CELULAR_I,MOT_AUT_CELULAR_II,MOT_AUT_EMAIL,MOT_AUT_FLG_SERASA,MOT_AUT_FLG_CRIMINAL")] MOT_AUTONOMO mOT_AUTONOMO)
         {
             if (ModelState.IsValid)
             {
-                db.Autonomo.Add(autonomo);
-                await db.SaveChangesAsync();
+                db.MOT_AUTONOMO.Add(mOT_AUTONOMO);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(autonomo);
+            return View(mOT_AUTONOMO);
         }
 
         // GET: Autonomos/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Autonomo autonomo = await db.Autonomo.FindAsync(id);
-            if (autonomo == null)
+            MOT_AUTONOMO mOT_AUTONOMO = db.MOT_AUTONOMO.Find(id);
+            if (mOT_AUTONOMO == null)
             {
                 return HttpNotFound();
             }
-            return View(autonomo);
+            return View(mOT_AUTONOMO);
         }
 
         // POST: Autonomos/Edit/5
@@ -79,40 +78,40 @@ namespace MotoristaMvc5.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "MOT_AUT_ID,MOT_AUT_NACIONALIDADE,MOT_AUT_NOME,MOT_AUT_SEXO,MOT_AUT_DATA_NASCIMENTO,MOT_AUT_CPF,MOT_AUT_RG_RGE,MOT_AUT_RG_ORG_EMISSAO,MOT_AUT_RG_DATA_EMISSAO,MOT_AUT_CNH,MOT_AUT_CNH_UF,MOT_AUT_P_CNH,MOT_AUT_CNH_VALIDADE,MOT_AUT_CNH_SEGURANCA,MOT_AUT_CNH_CAT_ID,MOT_AUT_TELEFONE,MOT_AUT_CELULAR_I,MOT_AUT_CELULAR_II,MOT_AUT_EMAIL,MOT_AUT_FLG_SERASA,MOT_AUT_FLG_CRIMINAL")] Autonomo autonomo)
+        public ActionResult Edit([Bind(Include = "MOT_AUT_ID,MOT_AUT_NACIONALIDADE,MOT_AUT_NOME,MOT_AUT_SEXO,MOT_AUT_DATA_NASCIMENTO,MOT_AUT_CPF,MOT_AUT_RG_RGE,MOT_AUT_RG_ORG_EMISSAO,MOT_AUT_RG_DATA_EMISSAO,MOT_AUT_CNH,MOT_AUT_CNH_UF,MOT_AUT_P_CNH,MOT_AUT_CNH_VALIDADE,MOT_AUT_CNH_SEGURANCA,MOT_AUT_CNH_CAT_ID,MOT_AUT_TELEFONE,MOT_AUT_CELULAR_I,MOT_AUT_CELULAR_II,MOT_AUT_EMAIL,MOT_AUT_FLG_SERASA,MOT_AUT_FLG_CRIMINAL")] MOT_AUTONOMO mOT_AUTONOMO)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(autonomo).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                db.Entry(mOT_AUTONOMO).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(autonomo);
+            return View(mOT_AUTONOMO);
         }
 
         // GET: Autonomos/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Autonomo autonomo = await db.Autonomo.FindAsync(id);
-            if (autonomo == null)
+            MOT_AUTONOMO mOT_AUTONOMO = db.MOT_AUTONOMO.Find(id);
+            if (mOT_AUTONOMO == null)
             {
                 return HttpNotFound();
             }
-            return View(autonomo);
+            return View(mOT_AUTONOMO);
         }
 
         // POST: Autonomos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Autonomo autonomo = await db.Autonomo.FindAsync(id);
-            db.Autonomo.Remove(autonomo);
-            await db.SaveChangesAsync();
+            MOT_AUTONOMO mOT_AUTONOMO = db.MOT_AUTONOMO.Find(id);
+            db.MOT_AUTONOMO.Remove(mOT_AUTONOMO);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 

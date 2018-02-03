@@ -1,4 +1,4 @@
-﻿@model MotoristaMvc5.Models.Cadastros.Veiculo.Veiculo
+﻿@model MotoristaMvc5.Models.Cadastros.Veiculo.MOT_VEICULO
 
 @{
     ViewBag.Title = "Edit";
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Veiculo</h4>
+        <h4>MOT_VEICULO</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.VEI_ID)

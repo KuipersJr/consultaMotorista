@@ -1,13 +1,13 @@
-﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Empresa.Empresa>
+﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Empresa.MOT_EMPRESA>
 
 @{
-    ViewBag.Title = "Empresas";
+    ViewBag.Title = "Index";
 }
 
-<h2>Empresas</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Novo", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -71,9 +71,9 @@
             @Html.DisplayFor(modelItem => item.EMP_UF)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.EMP_ID }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.EMP_ID }) |
-            @Html.ActionLink("Excluir", "Delete", new { id=item.EMP_ID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.EMP_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EMP_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EMP_ID })
         </td>
     </tr>
 }

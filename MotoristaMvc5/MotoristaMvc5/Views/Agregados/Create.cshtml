@@ -1,7 +1,7 @@
-﻿@model MotoristaMvc5.Models.Agregado
+﻿@model MotoristaMvc5.Models.Cadastros.Motoristas.MOT_AGREGADO_VEICULO
 
 @{
-    ViewBag.Title = "Agregado";
+    ViewBag.Title = "Cadastro de agregados";
 }
 
 <h2>Cadastro</h2>
@@ -12,18 +12,9 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Agregado</h4>
+        <h4>Motorista agregado</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.MAV_TIPO_PROPRIETARIO, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @*@Html.EditorFor(model => model.MAV_TIPO_PROPRIETARIO, new { htmlAttributes = new { @class = "form-control" } })*@
-				@Html.RadioButtonFor(model => model.MAV_TIPO_PROPRIETARIO, 0, false)@Html.Label("PF")
-				@Html.RadioButtonFor(model => model.MAV_TIPO_PROPRIETARIO, 1, false)@Html.Label("PJ")
-                @Html.ValidationMessageFor(model => model.MAV_TIPO_PROPRIETARIO, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.MAV_CPF, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -65,6 +56,19 @@
             </div>
         </div>
 
+		<!-- Dados do proprietário -->
+		<br/>
+		<h4><strong>Dados do proprietário</strong></h4>
+		<hr/>
+		<div class="form-group">
+			@Html.LabelFor(model => model.MAV_TIPO_PROPRIETARIO, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@*@Html.EditorFor(model => model.MAV_TIPO_PROPRIETARIO, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.RadioButtonFor(model => model.MAV_TIPO_PROPRIETARIO, "F", false)@Html.Label("PF")
+				@Html.RadioButtonFor(model => model.MAV_TIPO_PROPRIETARIO, "J", false)@Html.Label("PJ")
+				@Html.ValidationMessageFor(model => model.MAV_TIPO_PROPRIETARIO, "", new { @class = "text-danger" })
+			</div>
+		</div>
         <div class="form-group">
             @Html.LabelFor(model => model.MAV_PROP_CPF_CNPJ, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -101,7 +105,7 @@
             @Html.LabelFor(model => model.MAV_PROP_SEXO, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @*@Html.EditorFor(model => model.MAV_PROP_SEXO, new { htmlAttributes = new { @class = "form-control" } })*@
-				@Html.RadioButtonFor(model => model.MAV_PROP_SEXO, "F", false)@Html.Label("Feminino")
+				@Html.RadioButtonFor(model => model.MAV_PROP_SEXO, "F", false)@Html.Label("Feminido")
 				@Html.RadioButtonFor(model => model.MAV_PROP_SEXO, "M", false)@Html.Label("Masculino")
                 @Html.ValidationMessageFor(model => model.MAV_PROP_SEXO, "", new { @class = "text-danger" })
             </div>
@@ -140,7 +144,7 @@
 }
 
 <div>
-    @Html.ActionLink("Voltar para listagem", "Index")
+    @Html.ActionLink("Voltar a listagem", "Index")
 </div>
 
 @section Scripts {

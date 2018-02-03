@@ -6,18 +6,19 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MotoristaMvc5.Models.Cadastros.Motoristas;
 using MotoristaMvc5.Models.Cadastros.Veiculo;
 
 namespace MotoristaMvc5.Controllers
 {
     public class VeiculosController : Controller
     {
-        private Veiculosdb db = new Veiculosdb();
+        private Motoristadb db = new Motoristadb();
 
         // GET: Veiculos
         public ActionResult Index()
         {
-            return View(db.Veiculo.ToList());
+            return View(db.MOT_VEICULO.ToList());
         }
 
         // GET: Veiculos/Details/5
@@ -27,12 +28,12 @@ namespace MotoristaMvc5.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Veiculo veiculo = db.Veiculo.Find(id);
-            if (veiculo == null)
+            MOT_VEICULO mOT_VEICULO = db.MOT_VEICULO.Find(id);
+            if (mOT_VEICULO == null)
             {
                 return HttpNotFound();
             }
-            return View(veiculo);
+            return View(mOT_VEICULO);
         }
 
         // GET: Veiculos/Create
@@ -46,16 +47,16 @@ namespace MotoristaMvc5.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VEI_ID,VEI_TIPO_PROPRIETARIO,VEI_CPF,VEI_NOME,VEI_PLACA,VEI_RENAVAM,VEI_RENA_UF,VEI_PROP_CPF_CNPJ,VEI_PROP_NOME_RAZAO_SOCIAL")] Veiculo veiculo)
+        public ActionResult Create([Bind(Include = "VEI_ID,VEI_TIPO_PROPRIETARIO,VEI_CPF,VEI_NOME,VEI_PLACA,VEI_RENAVAM,VEI_RENA_UF,VEI_PROP_CPF_CNPJ,VEI_PROP_NOME_RAZAO_SOCIAL")] MOT_VEICULO mOT_VEICULO)
         {
             if (ModelState.IsValid)
             {
-                db.Veiculo.Add(veiculo);
+                db.MOT_VEICULO.Add(mOT_VEICULO);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(veiculo);
+            return View(mOT_VEICULO);
         }
 
         // GET: Veiculos/Edit/5
@@ -65,12 +66,12 @@ namespace MotoristaMvc5.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Veiculo veiculo = db.Veiculo.Find(id);
-            if (veiculo == null)
+            MOT_VEICULO mOT_VEICULO = db.MOT_VEICULO.Find(id);
+            if (mOT_VEICULO == null)
             {
                 return HttpNotFound();
             }
-            return View(veiculo);
+            return View(mOT_VEICULO);
         }
 
         // POST: Veiculos/Edit/5
@@ -78,15 +79,15 @@ namespace MotoristaMvc5.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "VEI_ID,VEI_TIPO_PROPRIETARIO,VEI_CPF,VEI_NOME,VEI_PLACA,VEI_RENAVAM,VEI_RENA_UF,VEI_PROP_CPF_CNPJ,VEI_PROP_NOME_RAZAO_SOCIAL")] Veiculo veiculo)
+        public ActionResult Edit([Bind(Include = "VEI_ID,VEI_TIPO_PROPRIETARIO,VEI_CPF,VEI_NOME,VEI_PLACA,VEI_RENAVAM,VEI_RENA_UF,VEI_PROP_CPF_CNPJ,VEI_PROP_NOME_RAZAO_SOCIAL")] MOT_VEICULO mOT_VEICULO)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(veiculo).State = EntityState.Modified;
+                db.Entry(mOT_VEICULO).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(veiculo);
+            return View(mOT_VEICULO);
         }
 
         // GET: Veiculos/Delete/5
@@ -96,12 +97,12 @@ namespace MotoristaMvc5.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Veiculo veiculo = db.Veiculo.Find(id);
-            if (veiculo == null)
+            MOT_VEICULO mOT_VEICULO = db.MOT_VEICULO.Find(id);
+            if (mOT_VEICULO == null)
             {
                 return HttpNotFound();
             }
-            return View(veiculo);
+            return View(mOT_VEICULO);
         }
 
         // POST: Veiculos/Delete/5
@@ -109,8 +110,8 @@ namespace MotoristaMvc5.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Veiculo veiculo = db.Veiculo.Find(id);
-            db.Veiculo.Remove(veiculo);
+            MOT_VEICULO mOT_VEICULO = db.MOT_VEICULO.Find(id);
+            db.MOT_VEICULO.Remove(mOT_VEICULO);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

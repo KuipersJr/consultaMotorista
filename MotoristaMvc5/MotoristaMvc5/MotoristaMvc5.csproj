@@ -183,30 +183,28 @@
     <Compile Include="Controllers\AgregadosController.cs" />
     <Compile Include="Controllers\AutonomosController.cs" />
     <Compile Include="Controllers\EmpresasController.cs" />
-    <Compile Include="Controllers\IndividualsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndividualsController.cs" />
     <Compile Include="Controllers\MOTORISTAsController.cs" />
     <Compile Include="Controllers\VeiculosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LogExtensions.cs" />
-    <Compile Include="Models\Cadastros\Empresa\Empresadb.cs" />
     <Compile Include="Models\Cadastros\Empresa\Empresa.cs" />
-    <Compile Include="Models\Cadastros\Motoristas\Agregadodb.cs" />
-    <Compile Include="Models\Cadastros\Motoristas\Autonomodb.cs" />
-    <Compile Include="Models\Cadastros\Motoristas\Contato.cs" />
-    <Compile Include="Models\Cadastros\Motoristas\CONTATO_MOTORISTA.cs" />
-    <Compile Include="Models\Cadastros\Motoristas\Endereco.cs" />
-    <Compile Include="Models\Cadastros\Motoristas\ENDERECO_MOTORISTA.cs" />
-    <Compile Include="Models\Cadastros\Motoristas\Individualdb.cs" />
-    <Compile Include="Models\Cadastros\Motoristas\Motorista.cs" />
+    <Compile Include="Models\Cadastros\Empresa\MOTORISTA_EMPRESA.cs" />
+    <Compile Include="Models\Cadastros\Empresa\MOT_EMPRESA.cs" />
     <Compile Include="Models\Cadastros\Motoristas\Agregado.cs" />
-    <Compile Include="Models\Cadastros\Motoristas\Autonomo.cs" />
     <Compile Include="Models\Cadastros\Motoristas\Individual.cs" />
+    <Compile Include="Models\Cadastros\Motoristas\Motorista.cs" />
+    <Compile Include="Models\Cadastros\Motoristas\MOT_AUTONOMO.cs" />
     <Compile Include="Models\Cadastros\Motoristas\Motoristadb.cs" />
-    <Compile Include="Models\Cadastros\Veiculo\Veiculo.cs" />
-    <Compile Include="Models\Cadastros\Veiculo\Veiculosdb.cs" />
+    <Compile Include="Models\Cadastros\Motoristas\MOT_AGREGADO_VEICULO.cs" />
+    <Compile Include="Models\Cadastros\Motoristas\MOT_INDIVIDUAL.cs" />
+    <Compile Include="Models\Cadastros\Veiculo\MOT_VEICULO.cs" />
+    <Compile Include="Models\Cadastros\Veiculo\Veiculos.cs" />
+    <Compile Include="Models\IBGE\Estados.cs" />
+    <Compile Include="Models\IBGE\IBGE_UF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -300,6 +298,7 @@
     <Content Include="Views\Motoristas\Details.cshtml" />
     <Content Include="Views\Motoristas\Edit.cshtml" />
     <Content Include="Views\Motoristas\Index.cshtml" />
+    <Content Include="Views\Shared\_Favicons.cshtml" />
     <Content Include="Views\Agregados\Create.cshtml" />
     <Content Include="Views\Agregados\Delete.cshtml" />
     <Content Include="Views\Agregados\Details.cshtml" />
@@ -325,7 +324,6 @@
     <Content Include="Views\Veiculos\Details.cshtml" />
     <Content Include="Views\Veiculos\Edit.cshtml" />
     <Content Include="Views\Veiculos\Index.cshtml" />
-    <Content Include="Views\Shared\_Favicons.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

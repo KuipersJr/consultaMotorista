@@ -6,7 +6,7 @@ namespace MotoristaMvc5.Models.Cadastros.Motoristas
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Autonomo
+    public partial class MOT_AUTONOMO
     {
         [Key]
         public int MOT_AUT_ID { get; set; }
@@ -25,6 +25,9 @@ namespace MotoristaMvc5.Models.Cadastros.Motoristas
         public string MOT_AUT_SEXO { get; set; }
 
         [Display(Name = "Data de nascimento")]
+        [Column(TypeName = "date")]
+        [DataType(DataType.Date, ErrorMessage = "Data incorreta")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime MOT_AUT_DATA_NASCIMENTO { get; set; }
 
         [Display(Name = "CPF")]
@@ -33,12 +36,14 @@ namespace MotoristaMvc5.Models.Cadastros.Motoristas
         [Display(Name = "RG/RGE")]
         public int MOT_AUT_RG_RGE { get; set; }
 
-        [Display(Name = "Orgão emissor")]
+        [Display(Name = "Orgão Emissor")]
         [MaxLength(5)]
-        public byte[] MOT_AUT_RG_ORG_EMISSAO { get; set; }
+        public string MOT_AUT_RG_ORG_EMISSAO { get; set; }
 
         [Display(Name = "Data de emissão")]
         [Column(TypeName = "date")]
+        [DataType(DataType.Date, ErrorMessage = "Data incorreta")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? MOT_AUT_RG_DATA_EMISSAO { get; set; }
 
         [Required]
@@ -51,15 +56,17 @@ namespace MotoristaMvc5.Models.Cadastros.Motoristas
         [StringLength(2)]
         public string MOT_AUT_CNH_UF { get; set; }
 
-        [Display(Name = "1º CNH")]
+        [Display(Name = "1ª CNH")]
         [StringLength(20)]
         public string MOT_AUT_P_CNH { get; set; }
 
         [Display(Name = "Validade")]
         [Column(TypeName = "date")]
+        [DataType(DataType.Date, ErrorMessage = "Data incorreta")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime MOT_AUT_CNH_VALIDADE { get; set; }
 
-        [Display(Name = "CNH segurança")]
+        [Display(Name = "Segurança")]
         [StringLength(20)]
         public string MOT_AUT_CNH_SEGURANCA { get; set; }
 
@@ -78,15 +85,15 @@ namespace MotoristaMvc5.Models.Cadastros.Motoristas
         [StringLength(20)]
         public string MOT_AUT_CELULAR_II { get; set; }
 
-        [Display(Name = "E-mail")]
+        [Display(Name = "Email")]
         [StringLength(50)]
         public string MOT_AUT_EMAIL { get; set; }
 
-        [Display(Name = "Restrição SERASA")]
+        [Display(Name = "Retrição financeira")]
         [StringLength(1)]
         public string MOT_AUT_FLG_SERASA { get; set; }
 
-        [Display(Name = "Restrição Criminal")]
+        [Display(Name = "Retrição crimnal")]
         [StringLength(1)]
         public string MOT_AUT_FLG_CRIMINAL { get; set; }
     }

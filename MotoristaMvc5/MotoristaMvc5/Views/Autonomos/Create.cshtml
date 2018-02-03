@@ -1,4 +1,4 @@
-﻿@model MotoristaMvc5.Models.Cadastros.Motoristas.Autonomo
+﻿@model MotoristaMvc5.Models.Cadastros.Motoristas.MOT_AUTONOMO
 
 @{
     ViewBag.Title = "Autonomo";
@@ -12,13 +12,15 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Autonomo</h4>
+        <h4>Motorista Autonomo</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.MOT_AUT_NACIONALIDADE, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MOT_AUT_NACIONALIDADE, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.MOT_AUT_NACIONALIDADE, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.RadioButtonFor(model => model.MOT_AUT_NACIONALIDADE, "S", false)@Html.Label("Sim")
+				@Html.RadioButtonFor(model => model.MOT_AUT_NACIONALIDADE, "N", false)@Html.Label("Não")
                 @Html.ValidationMessageFor(model => model.MOT_AUT_NACIONALIDADE, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -122,7 +124,11 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MOT_AUT_CNH_CAT_ID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MOT_AUT_CNH_CAT_ID, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.MOT_AUT_CNH_CAT_ID, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.DropDownListFor(model => model.MOT_AUT_CNH_CAT_ID, new SelectListItem[] {
+										new SelectListItem() {Text = "A", Value = "0" },
+										new SelectListItem() {Text = "B", Value = "1" },
+										new SelectListItem() {Text = "E", Value = "2"} })
                 @Html.ValidationMessageFor(model => model.MOT_AUT_CNH_CAT_ID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -162,7 +168,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MOT_AUT_FLG_SERASA, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MOT_AUT_FLG_SERASA, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.MOT_AUT_FLG_SERASA, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.RadioButtonFor(model => model.MOT_AUT_FLG_SERASA, "S", false)@Html.Label("Sim")
+				@Html.RadioButtonFor(model => model.MOT_AUT_FLG_SERASA, "N", false)@Html.Label("Não")
                 @Html.ValidationMessageFor(model => model.MOT_AUT_FLG_SERASA, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -170,7 +178,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MOT_AUT_FLG_CRIMINAL, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MOT_AUT_FLG_CRIMINAL, new { htmlAttributes = new { @class = "form-control" } })
+@*                @Html.EditorFor(model => model.MOT_AUT_FLG_CRIMINAL, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.RadioButtonFor(model => model.MOT_AUT_FLG_CRIMINAL, "S", false)@Html.Label("Sim")
+				@Html.RadioButtonFor(model => model.MOT_AUT_FLG_CRIMINAL, "N", false)@Html.Label("Não")
                 @Html.ValidationMessageFor(model => model.MOT_AUT_FLG_CRIMINAL, "", new { @class = "text-danger" })
             </div>
         </div>

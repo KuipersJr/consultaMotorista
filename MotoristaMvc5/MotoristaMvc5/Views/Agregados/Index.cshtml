@@ -1,10 +1,10 @@
-﻿@model IEnumerable<MotoristaMvc5.Models.Agregado>
+﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Motoristas.MOT_AGREGADO_VEICULO>
 
 @{
     ViewBag.Title = "Agregados";
 }
 
-<h2>Index</h2>
+<h2>Agregados cadastrados</h2>
 
 <p>
     @Html.ActionLink("Novo", "Create")
@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MAV_TIPO_PROPRIETARIO)
+            @Html.DisplayNameFor(model => model.MAV_TIPO_PROPRIETARIO)			
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MAV_CPF)
@@ -59,7 +59,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.MAV_TIPO_PROPRIETARIO)
+            @*@Html.DisplayFor(modelItem => item.MAV_TIPO_PROPRIETARIO)*@
+			@switch (item.MAV_TIPO_PROPRIETARIO)
+			{
+				case "F":
+					<div>Pessoa Fisica</div>
+					break;
+				case "J":
+					<div>Pessoa Jurídica</div>
+					break;
+			}
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MAV_CPF)
@@ -103,7 +112,7 @@
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.MAV_ID }) |
             @Html.ActionLink("Detalhes", "Details", new { id=item.MAV_ID }) |
-            @Html.ActionLink("Excluir", "Delete", new { id=item.MAV_ID })
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.MAV_ID })*@
         </td>
     </tr>
 }

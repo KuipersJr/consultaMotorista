@@ -1,110 +1,92 @@
 namespace MotoristaMvc5.Models.Cadastros.Motoristas
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+    using System.Linq;
 
-    public partial class MOT_INDIVIDUAL
+    public partial class Individual : DbContext
     {
-        [Key]
-        public int MOT_INDI_ID { get; set; }
+        public Individual()
+            : base("name=Individual")
+        {
+        }
 
-        [Required]
-        [Display(Name = "Brasileiro")]
-        [StringLength(1)]
-        public string MOT_INDI_NACIONALIDADE { get; set; }
+        public virtual DbSet<MOT_INDIVIDUAL> MOT_INDIVIDUAL { get; set; }
 
-        [Display(Name = "Nome")]
-        [StringLength(50)]
-        public string MOT_INDI_NOME { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_NACIONALIDADE)
+                .IsUnicode(false);
 
-        [Display(Name = "Sexo")]
-        [StringLength(1)]
-        public string MOT_INDI_SEXO { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_NOME)
+                .IsUnicode(false);
 
-        [Display(Name = "Data de nascimento")]
-        public DateTime MOT_INDI_DATA_NASCIMENTO { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_SEXO)
+                .IsUnicode(false);
 
-        [Display(Name = "CPF")]
-        public int MOT_INDI_CPF { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_CPF)
+                .IsUnicode(false);
 
-        [Display(Name = "RG/RGE")]
-        public int MOT_INDI_RG_RGE { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_RG_RGE)
+                .IsUnicode(false);
 
-        [Display(Name = "Orgão emissor")]
-        [MaxLength(5)]
-        public byte[] MOT_INDI_RG_ORG_EMISSAO { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_RG_ORG_EMISSAO)
+                .IsUnicode(false);
 
-        [Display(Name = "Data da emissão")]
-        [Column(TypeName = "date")]
-        public DateTime? MOT_INDI_RG_DATA_EMISSAO { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_CNH)
+                .IsUnicode(false);
 
-        [Required]
-        [Display(Name = "Nº CNH")]
-        [StringLength(20)]
-        public string MOT_INDI_CNH { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_CNH_UF)
+                .IsUnicode(false);
 
-        [Required]
-        [Display(Name = "UF CNH")]
-        [StringLength(1)]
-        public string MOT_INDI_CNH_UF { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_P_CNH)
+                .IsUnicode(false);
 
-        [Display(Name = "1º CNH")]
-        [StringLength(20)]
-        public string MOT_INDI_P_CNH { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_CNH_SEGURANCA)
+                .IsUnicode(false);
 
-        [Display(Name = "Validade")]
-        [Column(TypeName = "date")]
-        public DateTime MOT_INDI_CNH_VALIDADE { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_TELEFONE)
+                .IsUnicode(false);
 
-        [Display(Name = "CNH segurança")]
-        [StringLength(20)]
-        public string MOT_INDI_CNH_SEGURANCA { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_CELULAR_I)
+                .IsUnicode(false);
 
-        [Display(Name = "Categoria")]
-        public int? MOT_INDI_CNH_CAT_ID { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_CELULAR_II)
+                .IsUnicode(false);
 
-        [Display(Name = "Telefone")]
-        [StringLength(20)]
-        public string MOT_INDI_TELEFONE { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_EMAIL)
+                .IsUnicode(false);
 
-        [Display(Name = "Celular I")]
-        [StringLength(20)]
-        public string MOT_INDI_CELULAR_I { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_EX_DOCUMENTO)
+                .IsUnicode(false);
 
-        [Display(Name = "Celular II")]
-        [StringLength(20)]
-        public string MOT_INDI_CELULAR_II { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_EX_CNH)
+                .IsUnicode(false);
 
-        [Display(Name = "E-mail")]
-        [StringLength(50)]
-        public string MOT_INDI_EMAIL { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_EX_PAIS_ORG)
+                .IsUnicode(false);
 
-        [Display(Name = "Documento extrangeiro")]
-        [StringLength(30)]
-        public string MOT_INDI_EX_DOCUMENTO { get; set; }
-
-        [Display(Name = "Validade do documento")]
-        [Column(TypeName = "date")]
-        public DateTime? MOT_INDI_EX_DOC_VALIDADE { get; set; }
-
-        [Required]
-        [Display(Name = "CNH")]
-        [StringLength(20)]
-        public string MOT_INDI_EX_CNH { get; set; }
-
-        [Display(Name = "Validade")]
-        [Column(TypeName = "date")]
-        public DateTime MOT_INDI_EX_CNH_VALIDADE { get; set; }
-
-        [Display(Name = "Pais origem")]
-        [StringLength(30)]
-        public string MOT_INDI_EX_PAIS_ORG { get; set; }
-
-        [Display(Name = "Cidade origem")]
-        [StringLength(30)]
-        public string MOT_INDI_EX_CIDADE { get; set; }
+            modelBuilder.Entity<MOT_INDIVIDUAL>()
+                .Property(e => e.MOT_INDI_EX_CIDADE)
+                .IsUnicode(false);
+        }
     }
 }

@@ -1,53 +1,57 @@
 namespace MotoristaMvc5.Models.Cadastros.Empresa
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+    using System.Linq;
 
-    public partial class Empresa
+    public partial class Empresa : DbContext
     {
-        [Key]
-        public int EMP_ID { get; set; }
+        public Empresa()
+            : base("name=Motorisadb")
+        {
+        }
 
-        [Required]
-        [Display(Name = "CNPJ")]
-        [StringLength(20)]
-        public string EMP_CNPJ { get; set; }
+        public virtual DbSet<MOT_EMPRESA> MOT_EMPRESA { get; set; }
+        public virtual DbSet<MOTORISTA_EMPRESA> MOTORISTA_EMPRESA { get; set; }
 
-        [Required]
-        [Display(Name = "Inscrição estadual")]
-        [StringLength(20)]
-        public string EMP_IE { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<MOT_EMPRESA>()
+                .Property(e => e.EMP_CNPJ)
+                .IsUnicode(false);
 
-        [Display(Name = "Razão social")]
-        [StringLength(100)]
-        public string EMP_NOME_RAZAO_SOCIAL { get; set; }
+            modelBuilder.Entity<MOT_EMPRESA>()
+                .Property(e => e.EMP_IE)
+                .IsUnicode(false);
 
-        [Required]
-        [Display(Name = "CEP")]
-        [StringLength(10)]
-        public string EMP_CEP { get; set; }
+            modelBuilder.Entity<MOT_EMPRESA>()
+                .Property(e => e.EMP_NOME_RAZAO_SOCIAL)
+                .IsUnicode(false);
 
-        [Display(Name = "Endereço")]
-        [StringLength(50)]
-        public string EMP_ENDERECO { get; set; }
+            modelBuilder.Entity<MOT_EMPRESA>()
+                .Property(e => e.EMP_CEP)
+                .IsUnicode(false);
 
-        [Display(Name = "Complemento")]
-        [StringLength(20)]
-        public string EMP_COMPLEMENTO { get; set; }
+            modelBuilder.Entity<MOT_EMPRESA>()
+                .Property(e => e.EMP_ENDERECO)
+                .IsUnicode(false);
 
-        [Display(Name = "Cidade")]
-        [StringLength(50)]
-        public string EMP_CIDADE { get; set; }
+            modelBuilder.Entity<MOT_EMPRESA>()
+                .Property(e => e.EMP_COMPLEMENTO)
+                .IsUnicode(false);
 
-        [Display(Name = "Bairro")]
-        [StringLength(50)]
-        public string EMP_BAIRRO { get; set; }
+            modelBuilder.Entity<MOT_EMPRESA>()
+                .Property(e => e.EMP_CIDADE)
+                .IsUnicode(false);
 
-        [Display(Name = "UF")]
-        [StringLength(2)]
-        public string EMP_UF { get; set; }
+            modelBuilder.Entity<MOT_EMPRESA>()
+                .Property(e => e.EMP_BAIRRO)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<MOT_EMPRESA>()
+                .Property(e => e.EMP_UF)
+                .IsUnicode(false);
+        }
     }
 }

@@ -1,71 +1,64 @@
-namespace MotoristaMvc5.Models
+namespace MotoristaMvc5.Models.Cadastros.Motoristas
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+    using System.Linq;
 
-    public partial class Agregado
+    public partial class Agregado : DbContext
     {
-        [Key]
-        public int MAV_ID { get; set; }
+        public Agregado()
+            : base("name=Motorisadb")
+        {
+        }
 
-        [Display(Name ="Tipo de proprietário")]
-        public short? MAV_TIPO_PROPRIETARIO { get; set; }
+        public virtual DbSet<MOT_AGREGADO_VEICULO> MOT_AGREGADO_VEICULO { get; set; }
 
-        [Display(Name = "Cpf do agregado")]
-        public int MAV_CPF { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_NOME)
+                .IsUnicode(false);
 
-        [Display(Name = "Nome do agregado")]
-        [StringLength(50)]
-        public string MAV_NOME { get; set; }
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_PLACA)
+                .IsUnicode(false);
 
-        [Display(Name = "Placa")]
-        [StringLength(10)]
-        public string MAV_PLACA { get; set; }
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_RENAVAM)
+                .IsUnicode(false);
 
-        [Display(Name = "Renavam")]
-        [StringLength(20)]
-        public string MAV_RENAVAM { get; set; }
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_RENA_UF)
+                .IsUnicode(false);
 
-        [Required]
-        [Display(Name = "UF")]
-        [StringLength(2)]
-        public string MAV_RENA_UF { get; set; }
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_PROP_CPF_CNPJ)
+                .IsUnicode(false);
 
-        [Required]
-        [Display(Name = "CPF/CNPJ do proprietário")]
-        [StringLength(20)]
-        public string MAV_PROP_CPF_CNPJ { get; set; }
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_PROP_NOME_RAZAO_SOCIAL)
+                .IsUnicode(false);
 
-        [Display(Name = "Nome/Razão social")]
-        [StringLength(100)]
-        public string MAV_PROP_NOME_RAZAO_SOCIAL { get; set; }
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_PROP_NOME_MAE)
+                .IsUnicode(false);
 
-        [Display(Name = "Nome da mãe")]
-        [StringLength(50)]
-        public string MAV_PROP_NOME_MAE { get; set; }
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_PROP_NOME_PAI)
+                .IsUnicode(false);
 
-        [Display(Name = "Nome do pai")]
-        [StringLength(50)]
-        public string MAV_PROP_NOME_PAI { get; set; }
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_PROP_SEXO)
+                .IsUnicode(false);
 
-        [Display(Name = "Sexo")]
-        [StringLength(1)]
-        public string MAV_PROP_SEXO { get; set; }
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_PROP_RG)
+                .IsUnicode(false);
 
-        [Display(Name = "Data de nascimento")]
-        public DateTime MAV_PROP_DATA_NASCIMENTO { get; set; }
-
-        [Required]
-        [Display(Name = "Rg do proprietário")]
-        [StringLength(20)]
-        public string MAV_PROP_RG { get; set; }
-
-        [Required]
-        [Display(Name = "UF")]
-        [StringLength(2)]
-        public string MAV_PROP_UF { get; set; }
+            modelBuilder.Entity<MOT_AGREGADO_VEICULO>()
+                .Property(e => e.MAV_PROP_UF)
+                .IsUnicode(false);
+        }
     }
 }

@@ -1,10 +1,10 @@
-﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Motoristas.Autonomo>
+﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Motoristas.MOT_AUTONOMO>
 
 @{
-    ViewBag.Title = "Autonomo";
+    ViewBag.Title = "Autonomos";
 }
 
-<h2>Autonomo</h2>
+<h2>Autonomos cadastrados</h2>
 
 <p>
     @Html.ActionLink("Novo", "Create")
@@ -139,7 +139,7 @@
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.MOT_AUT_ID }) |
             @Html.ActionLink("Detalhes", "Details", new { id=item.MOT_AUT_ID }) |
-            @Html.ActionLink("Excluir", "Delete", new { id=item.MOT_AUT_ID })
+@*            @Html.ActionLink("Delete", "Delete", new { id=item.MOT_AUT_ID })*@
         </td>
     </tr>
 }

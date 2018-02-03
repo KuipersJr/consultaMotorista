@@ -1,10 +1,10 @@
-﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Motoristas.Individual>
+﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Motoristas.MOT_INDIVIDUAL>
 
 @{
-    ViewBag.Title = "Individual";
+    ViewBag.Title = "Motorita individual";
 }
 
-<h2>Individual</h2>
+<h2>Motoritas individuais cadastrados</h2>
 
 <p>
     @Html.ActionLink("Novo", "Create")
@@ -161,9 +161,9 @@
             @Html.DisplayFor(modelItem => item.MOT_INDI_EX_CIDADE)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MOT_INDI_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MOT_INDI_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MOT_INDI_ID })
+            @Html.ActionLink("Editar", "Edit", new { id=item.MOT_INDI_ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.MOT_INDI_ID }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.MOT_INDI_ID })*@
         </td>
     </tr>
 }
