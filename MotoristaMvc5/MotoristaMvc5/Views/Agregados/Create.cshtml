@@ -16,6 +16,23 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+		<div class="form-group">
+			@Html.LabelFor(model => model.MOT_COD_INT, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.MOT_COD_INT, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.MOT_COD_INT, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.MOT_DATA_CADASTRO, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.MOT_DATA_CADASTRO, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.MOT_DATA_CADASTRO, "", new { @class = "text-danger" })
+				@Html.DisplayFor(model => model.MOT_DATA_CADASTRO)
+			</div>
+		</div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.MAV_CPF, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -134,6 +151,125 @@
                 @Html.ValidationMessageFor(model => model.MAV_PROP_UF, "", new { @class = "text-danger" })
             </div>
         </div>
+
+		<!-- Endereco -->
+		<br />
+		<h4><strong>Endereço</strong></h4>
+		<hr />
+		<div class="form-group">
+			@Html.LabelFor(model => model.END_DESCRICAO, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.END_DESCRICAO, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.END_DESCRICAO, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.END_NUMERO, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.END_NUMERO, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.END_NUMERO, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.END_CEP, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.END_CEP, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.END_CEP, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.END_COMPLEMENTO, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.END_COMPLEMENTO, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.END_COMPLEMENTO, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.END_UF, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.END_UF, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.END_UF, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.END_PAIS, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@*@Html.EditorFor(model => model.END_PAIS, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.DropDownListFor(model => model.END_PAIS, new SelectListItem[] {
+										new SelectListItem() {Text = "Argentina",       Value = "Argentina" },
+										new SelectListItem() {Text = "Bolívia",         Value = "Bolívia" },
+										new SelectListItem() {Text = "Brasil",          Value = "Brasil",Selected =true},
+										new SelectListItem() {Text = "Chile",           Value = "Chile" },
+										new SelectListItem() {Text = "Colômbia",        Value = "Colômbia" },
+										new SelectListItem() {Text = "Equador",         Value = "Equador"},
+										new SelectListItem() {Text = "Guiana",          Value = "Guiana" },
+										new SelectListItem() {Text = "Guiana Francesa", Value = "Guiana Francesa" },
+										new SelectListItem() {Text = "Ilhas Malvinas",  Value = "Ilhas Malvinas"},
+										new SelectListItem() {Text = "Paraguai",        Value = "Paraguai" },
+										new SelectListItem() {Text = "Peru",            Value = "Peru" },
+										new SelectListItem() {Text = "Suriname",        Value = "Suriname"},
+										new SelectListItem() {Text = "Uruguai",         Value = "Uruguai" },
+										new SelectListItem() {Text = "Venezuela",       Value = "Venezuela" }}
+										)
+				@Html.ValidationMessageFor(model => model.END_PAIS, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<!-- Contato -->
+		<br />
+		<h4><strong>Contato</strong></h4>
+		<hr />
+		<div class="form-group">
+			@Html.LabelFor(model => model.CONT_NOME, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.CONT_NOME, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.CONT_NOME, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.CONT_REFERENCIA, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@*@Html.EditorFor(model => model.CONT_REFERENCIA, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.DropDownListFor(model => model.CONT_REFERENCIA, new SelectListItem[] {
+										new SelectListItem() {Text = "Esposa", Value = "0" },
+										new SelectListItem() {Text = "Mãe",    Value = "1" },
+										new SelectListItem() {Text = "Pai",    Value = "2"},
+										new SelectListItem() {Text = "Irmão",  Value = "3" },
+										new SelectListItem() {Text = "Vizinho",Value = "4" }}
+										)
+				@Html.ValidationMessageFor(model => model.CONT_REFERENCIA, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.CONT_CELULARI, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.CONT_CELULARI, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.CONT_CELULARI, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.CONT_CELULARII, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.CONT_CELULARII, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.CONT_CELULARII, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.CONT_TELEFONE, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.CONT_TELEFONE, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.CONT_TELEFONE, "", new { @class = "text-danger" })
+			</div>
+		</div>	
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

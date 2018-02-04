@@ -1,10 +1,10 @@
 ﻿@model MotoristaMvc5.Models.Cadastros.Veiculo.MOT_VEICULO
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Cadastro do veiculo";
 }
 
-<h2>Create</h2>
+<h2>Cadastro</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,13 +12,32 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>MOT_VEICULO</h4>
+        <h4>Veículos</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.VEI_CODIGO, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.VEI_CODIGO, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.VEI_CODIGO, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.VEI_DATA_CADASTRO, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.VEI_DATA_CADASTRO, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.VEI_DATA_CADASTRO, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.VEI_TIPO_PROPRIETARIO, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.VEI_TIPO_PROPRIETARIO, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.VEI_TIPO_PROPRIETARIO, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.RadioButtonFor(model => model.VEI_TIPO_PROPRIETARIO, "F", false)@Html.Label("PF")
+				@Html.RadioButtonFor(model => model.VEI_TIPO_PROPRIETARIO, "J", false)@Html.Label("PJ")
                 @Html.ValidationMessageFor(model => model.VEI_TIPO_PROPRIETARIO, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -81,14 +100,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Gravar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar para listagem", "Index")
 </div>
 
 @section Scripts {

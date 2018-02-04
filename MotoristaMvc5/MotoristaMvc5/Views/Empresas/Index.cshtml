@@ -1,16 +1,22 @@
 ﻿@model IEnumerable<MotoristaMvc5.Models.Cadastros.Empresa.MOT_EMPRESA>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Empresas";
 }
 
-<h2>Index</h2>
+<h2>Empresas cadastradas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Novo", "Create")
 </p>
 <table class="table">
     <tr>
+		<th>
+			@Html.DisplayNameFor(model => model.EMP_CODIGO)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.EMP_DATA_CADASTRO)
+		</th>
         <th>
             @Html.DisplayNameFor(model => model.EMP_CNPJ)
         </th>
@@ -43,6 +49,12 @@
 
 @foreach (var item in Model) {
     <tr>
+		<td>
+			@Html.DisplayFor(modelItem => item.EMP_CODIGO)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.EMP_DATA_CADASTRO)
+		</td>
         <td>
             @Html.DisplayFor(modelItem => item.EMP_CNPJ)
         </td>
@@ -71,9 +83,9 @@
             @Html.DisplayFor(modelItem => item.EMP_UF)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EMP_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EMP_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EMP_ID })
+            @Html.ActionLink("Editar", "Edit", new { id=item.EMP_ID }) |
+            @Html.ActionLink("Detailhes", "Details", new { id=item.EMP_ID }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.EMP_ID })*@
         </td>
     </tr>
 }

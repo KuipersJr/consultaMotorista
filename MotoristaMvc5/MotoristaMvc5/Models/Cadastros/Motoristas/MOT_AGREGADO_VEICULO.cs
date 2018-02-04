@@ -72,5 +72,57 @@ namespace MotoristaMvc5.Models.Cadastros.Motoristas
         [Display(Name = "UF")]
         [StringLength(2)]
         public string MAV_PROP_UF { get; set; }
+
+        [Display(Name = "Código motorista")]
+        [StringLength(10)]
+        public string MOT_COD_INT { get; set; }
+
+        [Display(Name = "Data de cadastro")]
+        [DataType(DataType.Date, ErrorMessage = "Data incorreta")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime MOT_DATA_CADASTRO { get; set; }
+
+        //.:: Dados de endereço ::.
+        [Display(Name = "Enderço")]
+        [StringLength(50)]
+        public string END_DESCRICAO { get; set; }
+
+        [Display(Name = "Número")]
+        [StringLength(10)]
+        public string END_NUMERO { get; set; }
+
+        [Display(Name = "CEP")]
+        [StringLength(10)]
+        public string END_CEP { get; set; }
+
+        [Display(Name = "Complemento")]
+        [StringLength(50)]
+        public string END_COMPLEMENTO { get; set; }
+
+        [Display(Name = "UF")]
+        [StringLength(2)]
+        public string END_UF { get; set; }
+
+        [Display(Name = "País")]
+        [StringLength(30)]
+        public string END_PAIS { get; set; }
+
+        //.:: dados de contato ::.
+        [Display(Name = "Celular II")]
+        public string CONT_CELULARII { get; set; }
+
+        [Display(Name = "Celular I")]
+        public string CONT_CELULARI { get; set; }
+
+        [Display(Name = "Telefone")]
+        [StringLength(10)]
+        public string CONT_TELEFONE { get; set; }
+
+        [Display(Name = "Tipo do Contado")]
+        public string CONT_REFERENCIA { get; set; }
+
+        [Display(Name = "Nome do contato")]
+        [StringLength(30)]
+        public string CONT_NOME { get; set; }
     }
 }
